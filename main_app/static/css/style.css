@@ -1,0 +1,44 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    
+}
+
+label {
+    font-size: x-large;
+    margin: 0 auto;
+    text-align: center;
+}
+
+table {
+    margin: 0 auto;
+    text-align: center;
+    border-style: solid;
+}
+
+tr.d0 {
+    background-color:darkgray;
+}
+
+tr.di {
+    border-style: solid black;
+    background-color: lightgray;
+}
+#position1{
+    margin-left: 58px;
+}
+
+#position2{
+    margin-left: 73px;
+}
+
+.position3{
+    margin-left: 40px;
+}
+
+#position4{
+    margin: 0 auto;
+    text-align: center;
+}
+
+

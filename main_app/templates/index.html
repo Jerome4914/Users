@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title>Users</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="text-center">All the Users</h1>
+        <table style="width: 100%">
+            <tr class="d0">
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Age</th>
+            </tr>
+            {% for one_user in users %}
+            <tr class="d1">
+                <td>{{one_user.id}}</td>
+                <td>{{one_user.first_name}} {{one_user.last_name}}</td>
+                <td>{{one_user.email_address}}</td>
+                <td>{{one_user.age}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <h1 class="text-center">Add a User</h1>
+        <form action="create_user" method="post">
+            {% csrf_token %}
+            <div class="row mb-2">
+                <label for="name">First Name</label>
+                <input type="text" class="form-control col-sm-3" name="name">
+                <label for="lname" class="position3">Last Name</label>
+                <input type="text" class="form-control col-sm-3" name="lname">
+            </div>
+            <div class="row mb-2">
+                <label for="email">Email</label>
+                <input type="text" id="position1" class="form-control col-sm-3" name="email">
+                <label for="age" class="position3">Age</label>
+                <input type="text" id="position2" class="form-control col-sm-3" name="age">
+            </div>
+            <div id="position4">
+                <button class="btn btn-secondary col-md-3 mt-3">Add</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
